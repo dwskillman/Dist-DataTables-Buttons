@@ -1,6 +1,6 @@
 {
     "name": "datatables.net-buttons",
-    "version": "1.6.2",
+    "version": "1.6.2.1",
     "description": "Buttons for DataTables ",
     "files": [
         "js/**/*.js",
@@ -23,7 +23,7 @@
     "bugs": "https://datatables.net/forums",
     "license": "MIT",
     "author": {
-        "name": "SpryMedia Ltd",
+        "name": "Daniel Skillman",
         "url": "http://datatables.net"
     },
     "dependencies": {
