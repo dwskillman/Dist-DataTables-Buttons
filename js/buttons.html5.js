@@ -1486,9 +1486,9 @@ DataTable.ext.buttons.excelHtml5 = {
 				var cell = null;
 
 				// For null, undefined of blank cell, continue so it doesn't create the _createNode
-				if ( row[i] === null || row[i] === undefined || row[i] === '' ) {
+				if ( row[i] === null || row[i] === undefined || row[i] === " " ) {
 					if ( config.createEmptyCells === true ) {
-						row[i] = '';
+						row[i] = " ";
 					}
 					else {
 						continue;
@@ -1499,6 +1499,32 @@ DataTable.ext.buttons.excelHtml5 = {
 				row[i] = $.trim( row[i] );
 
 				// Special number formatting options
+				// for ( var j=0, jen=_excelSpecials.length ; j<jen ; j++ ) {
+				// 	var special = _excelSpecials[j];
+				//
+				// 	// TODO Need to provide the ability for the specials to say
+				// 	// if they are returning a string, since at the moment it is
+				// 	// assumed to be a number
+				// 	if ( row[i].match && ! row[i].match(/^0\d+/) && row[i].match( special.match ) ) {
+				// 		var val = row[i].replace(/[^\d\.\-]/g, '');
+				//
+				// 		if ( special.fmt ) {
+				// 			val = special.fmt( val );
+				// 		}
+				//
+				// 		cell = _createNode( rels, 'c', {
+				// 			attr: {
+				// 				r: cellId,
+				// 				s: special.style
+				// 			},
+				// 			children: [
+				// 				_createNode( rels, 'v', { text: val } )
+				// 			]
+				// 		} );
+				//
+				// 		break;
+				// 	}
+				// }
 
 				if ( ! cell ) {
 					// String output - replace non standard characters for text output
@@ -1546,7 +1572,7 @@ DataTable.ext.buttons.excelHtml5 = {
 				}
 			} ) );
 			mergeCells.attr( 'count', parseFloat(mergeCells.attr( 'count' ))+1 );
-			$('row:eq('+(row-1)+') c', rels).attr( 's', '51' ); // centre
+			$('row:eq('+(row-1)+') c', rels).attr( 's', '6' ); // centre
 		};
 
 		// Title and top messages
@@ -1565,20 +1591,20 @@ DataTable.ext.buttons.excelHtml5 = {
 		// Table itself
 		if ( config.header ) {
 			addRow( data.header, rowPos );
-			$('row:last c', rels).attr( 's', '2' ); // bold
+			//$('row:last c', rels).attr( 's', '6' ); // bold
 		}
-	
+
 		dataStartRow = rowPos;
 
 		for ( var n=0, ie=data.body.length ; n<ie ; n++ ) {
 			addRow( data.body[n], rowPos );
 		}
-	
+
 		dataEndRow = rowPos;
 
 		if ( config.footer && data.footer ) {
 			addRow( data.footer, rowPos);
-			$('row:last c', rels).attr( 's', '2' ); // bold
+			//$('row:last c', rels).attr( 's', '6' ); // bold
 		}
 
 		// Below the table
@@ -1679,7 +1705,7 @@ DataTable.ext.buttons.excelHtml5 = {
 
 	messageBottom: '*',
 
-	createEmptyCells: false,
+	createEmptyCells: true,
 
 	autoFilter: false,
 
