@@ -1,4 +1,4 @@
-The biggest difference is the additional styling added to the 
+The biggest difference is the additional styling added to the default buttons.html5.js file. Use the main datatables.net repo if you want default excel styling.
 
 # Buttons for DataTables 
 
