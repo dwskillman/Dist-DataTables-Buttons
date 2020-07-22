@@ -1,5 +1,10 @@
 The biggest difference is the additional styling added to the default buttons.html5.js file. Use the main datatables.net repo if you want default excel styling.
 
+# npm
+```
+npm install @dwskillman/sabr.datatables.net-buttons@1.6.2
+```
+
 # Buttons for DataTables 
 
 This package contains distribution files for the [Buttons extension](https://datatables.net/extensions/buttons) for [DataTables](https://datatables.net/). Only the core software for this library is contained in this package - to be correctly styled, a styling package for Buttons must also be included. Styling options include DataTable's native styling, [Bootstrap](http://getbootstrap.com) and [Foundation](http://foundation.zurb.com/).
