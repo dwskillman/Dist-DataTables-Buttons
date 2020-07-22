@@ -1,5 +1,5 @@
 {
-    "name": "@sabr.datatables.net-buttons",
+    "name": "@sabr/sabr.datatables.net-buttons",
     "version": "1.6.2",
     "description": "Buttons for DataTables ",
     "files": [
