@@ -26,6 +26,7 @@
         "name": "Daniel Skillman",
         "url": "http://datatables.net"
     },
+    "publishConfig": { "registry": "https://npm.pkg.github.com/" },
     "dependencies": {
         "jquery": ">=1.7",
         "datatables.net": "^1.10.15"
